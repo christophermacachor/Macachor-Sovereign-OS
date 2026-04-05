@@ -1,6 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Macachor Sovereign OS (MSOS) — Deterministic Governance Kernel</title>
+
+  <!-- Canonical Identity Binding -->
+  <link rel="canonical" href="https://christophermacachor.github.io/Macachor-Sovereign-OS/">
+
+  <!-- SEO Metadata -->
+  <meta name="description"
+        content="Macachor Sovereign OS (MSOS) — deterministic governance kernel with machine‑enforceable rights, orthogonality ontology, formal verification, and AI‑aligned governance.">
+  <meta name="keywords"
+        content="MSOS, deterministic governance, orthogonality ontology, formal methods, protocol verification, AI alignment, governance kernel">
+  <meta name="robots" content="index, follow">
+
+  <!-- Identity Schema: Maximum Discoverability -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Christopher Macachor",
+    "url": "https://christophermacachor.github.io/Macachor-Sovereign-OS/",
+    "jobTitle": "Founder, Macachor AI; Architect of Macachor Sovereign OS",
+    "affiliation": "Macachor AI",
+    "sameAs": [
+      "https://github.com/christophermacachor",
+      "https://orcid.org/0009-0008-0100-2856"
+    ]
+  }
+  </script>
+
+  <!-- Ontology Schema: Maximum Machine‑Readability -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://macachor.org/ontology/orthogonality#",
+    "@id": "https://macachor.org/ontology/orthogonality",
+    "@type": "owl:Ontology",
+    "name": "Orthogonality Ontology",
+    "description": "Rigorous, closure-complete, machine-enforceable orthogonality ontology for MSOS.",
+    "version": "1.0.0",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Macachor AI"
+    }
+  }
+  </script>
+
+  <!-- Minimal, responsive styling -->
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      color: #111;
+      background: #fff;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    h1, h2, h3 { font-weight: 600; margin: 1.2rem 0 0.5rem; }
+    a { color: #0055b3; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    pre, code { background:#f4f4f4; padding:0.2rem 0.4rem; border-radius:4px; }
+    .navbar {
+      position: sticky;
+      top: 0;
+      background:#fafafa;
+      border-bottom:1px solid #ddd;
+      padding:0.5rem 1rem;
+      display:flex;
+      gap:1.5rem;
+      z-index:10;
+    }
+    .navbar a { color:#000; }
+    .hero {
+      text-align:center;
+      margin-bottom:2rem;
+    }
+    .hero button {
+      background:#000;
+      color:#fff;
+      border:none;
+      padding:0.6rem 1rem;
+      border-radius:4px;
+      cursor:pointer;
+    }
+    .section { margin-top:3rem; }
+    .footer {
+      margin-top:4rem;
+      font-size:0.9rem;
+      color:#555;
+      text-align:center;
+    }
+    @media (prefers-color-scheme: dark) {
+      body { background:#111; color:#eee; }
+      pre, code { background:#222; }
+      .navbar { background:#222; border-color:#444; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <a href="#overview">Overview</a>
+    <a href="#ontology">Ontology</a>
+    <a href="#features">Features</a>
+    <a href="#demo">Demo</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div class="container">
+    <section class="hero">
+      <h1>Macachor Sovereign OS (MSOS)</h1>
+      <p style="font-size:1.2rem;">
+        Deterministic governance kernel with provably orthogonal, machine‑enforceable rights.
+      </p>
+      <a href="https://github.com/ChristopherMacachor/Macachor-Sovereign-OS"
+         target="_blank"><button>View on GitHub →</button></a>
+    </section>
+
+    <section id="overview" class="section">
+      <h2>Overview</h2>
+      <ul>
+        <li>Enforces rights as logical predicates.</li>
+        <li>Guarantees orthogonal permission composition.</li>
+        <li>Records every action in an immutable Merkle‑chained audit log.</li>
+        <li>Runs deterministically, eliminating race‑condition exploits.</li>
+      </ul>
+    </section>
+
+    <section id="ontology" class="section">
+      <h2>Orthogonality Ontology</h2>
+      <p>
+        The ontology is published as an OWL file at
+        <code>https://macachor.org/ontology/orthogonality</code>.
+      </p>
+      <p><a href="https://macachor.org/ontology/orthogonality.owl"
+            target="_blank">Download OWL file →</a></p>
+    </section>
+
+    <section id="features" class="section">
+      <h2>Key Features</h2>
+      <ul>
+        <li><strong>Deterministic Governance Kernel</strong> – mathematically provable state transitions.</li>
+        <li><strong>Machine‑Enforceable Rights</strong> – predicates automatically reject illegal actions.</li>
+        <li><strong>Orthogonal Permission Model</strong> – composable without hidden side‑effects.</li>
+        <li><strong>Formal Protocol Verification</strong> – protobuf schemas verified by SMT solvers.</li>
+        <li><strong>Immutable Audit Log</strong> – Merkle‑tree hash‑chaining for tamper evidence.</li>
+      </ul>
+    </section>
+
+    <section id="demo" class="section">
+      <h2>Live Demo</h2>
+      <p>Open the developer console and try:</p>
+      <pre><code>// Register a right for Alice
+msos.registerRight("alice", "can_read(resource_A)");
+
+// Attempt an illegal write
+msos.request("alice", "write(resource_A)");
+// → {code:403, detail:"can_read(resource_A) violated"}
+</code></pre>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:info@macachor.org">info@macachor.org</a></p>
+    </section>
+
+    <footer class="footer">
+      © 2026 Macachor AI – All rights reserved.
+    </footer>
+  </div>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Macachor Sovereign OS (MSOS)</title>
