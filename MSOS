@@ -1,7 +1,61 @@
 msos/
-  stripe/
-  core/
-  licensing/
-  identity/
-  entitlements/
-  rights/
+├── core/
+│   ├── README.md
+│   ├── kernel.md
+│   ├── axioms.md
+│   ├── invariants.md
+│   └── state/
+│       ├── bootstrap.yaml
+│       └── transitions.yaml
+│
+├── identity/
+│   ├── README.md
+│   ├── identity.schema.json
+│   ├── identity.machine.yaml
+│   └── proofs/
+│       ├── signature_proof.md
+│       └── sovereign_claims.md
+│
+├── entitlements/
+│   ├── README.md
+│   ├── entitlements.schema.json
+│   ├── entitlements.machine.yaml
+│   └── tables/
+│       ├── grants.table.yaml
+│       └── revocations.table.yaml
+│
+├── rights/
+│   ├── README.md
+│   ├── rights.declaration.md
+│   ├── rights.machine.yaml
+│   └── constraints/
+│       ├── non_derogation.md
+│       └── enforcement_rules.yaml
+│
+├── stripe/
+│   ├── README.md
+│   ├── stripe.config.yaml
+│   ├── products/
+│   │   ├── digital_goods.yaml
+│   │   └── subscriptions.yaml
+│   └── webhooks/
+│       ├── handler.js
+│       └── events.md
+│
+└── licensing/
+    ├── LICENSE.md
+    ├── LICENSE.fullstack.md
+    ├── LICENSE.machine.yaml
+    ├── README.md
+    ├── grants/
+    │   ├── grant.personal.use.yaml
+    │   ├── grant.commercial.use.yaml
+    │   └── grant.sovereign.use.yaml
+    ├── constraints/
+    │   ├── constraint.no_resale.yaml
+    │   ├── constraint.no_derivatives.yaml
+    │   └── constraint.sovereign_protection.yaml
+    └── invariants/
+        ├── invariant.immutability.md
+        ├── invariant.sovereign_boundary.md
+        └── invariant.machine_enforcement.yaml
