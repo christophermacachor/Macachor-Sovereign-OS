@@ -1,12 +1,11 @@
 msos/
   stripe/
   core/
-  licensing/msos/
 └── licensing/
     ├── LICENSE.md
     ├── LICENSE.fullstack.md
     ├── LICENSE.machine.yaml
-    ├── grants/vendor-qtopo.grant.yaml
+    ├── grants/ 
     │   ├── vendor-qtopo.grant.yaml
     │   ├── qcl.grant.yaml
     │   └── user-access.grant.yaml
