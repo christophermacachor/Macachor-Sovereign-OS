@@ -6,7 +6,7 @@ msos/
     ├── LICENSE.md
     ├── LICENSE.fullstack.md
     ├── LICENSE.machine.yaml
-    ├── grants/
+    ├── grants/vendor-qtopo.grant.yaml
     │   ├── vendor-qtopo.grant.yaml
     │   ├── qcl.grant.yaml
     │   └── user-access.grant.yaml
