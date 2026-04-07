@@ -1,23 +1,7 @@
 msos/
   stripe/
   core/
-└── licensing/
-    ├── LICENSE.md
-    ├── LICENSE.fullstack.md
-    ├── LICENSE.machine.yaml
-    ├── grants/ 
-    │   ├── vendor-qtopo.grant.yaml
-    │   ├── qcl.grant.yaml
-    │   └── user-access.grant.yaml
-    ├── constraints/
-    │   ├── vendor-qtopo.constraint.hs
-    │   ├── qcl.constraint.hs
-    │   └── user.constraint.hs
-    ├── invariants/
-    │   ├── sovereignty.ax
-    │   ├── non-subordination.ax
-    │   └── monotone-rights.ax
-    └── README.md
+  licensing/
   identity/
   entitlements/
   rights/
