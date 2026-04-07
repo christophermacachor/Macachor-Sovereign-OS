@@ -1,8 +1,7 @@
 msos/
   stripe/
   core/
-  licensing/
-LICENSE.machine.yaml
+  licensing/LICENSE.machine.yaml
   identity/
   entitlements/
   rights/
