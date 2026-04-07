@@ -1,4 +1,4 @@
-msos/manifest.yaml
+msos/
 ├── core/
 │   ├── README.md
 │   ├── kernel.md
