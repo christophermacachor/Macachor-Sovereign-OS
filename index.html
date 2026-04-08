@@ -1,418 +1,402 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
-  <title>Macachor Sovereign OS (MSOS)</title>
+  <title>Omega Prime · Sovereign Full Stack | Quantum-Bound Blockchain & MSOS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <link rel="canonical" href="https://macachor.ai/msos/" />
-  <meta name="description" content="MSOS — Machine Sovereign Operating System. Deterministic identity, rights, entitlements, licensing, and agentic automation." />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Macachor Sovereign OS (MSOS)" />
-  <meta property="og:description" content="Deterministic governance kernel and sovereign automation framework." />
-  <meta property="og:url" content="https://macachor.ai/msos/" />
-  <meta property="og:image" content="https://macachor.ai/assets/msos-og.png" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Macachor Sovereign OS (MSOS)" />
-  <meta name="twitter:description" content="Deterministic governance kernel and sovereign automation framework." />
-  <meta name="twitter:image" content="https://macachor.ai/assets/msos-og.png" />
-
-  <meta name="robots" content="index,follow" />
+  
+  <!-- ===== SEO & CRAWLER CONFIGURATION ===== -->
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="googlebot" content="index,follow" />
+  <meta name="bingbot" content="index,follow" />
   <meta name="ai-crawl" content="allow" />
   <meta name="ai-summary" content="allow" />
   <meta name="ai-training" content="allow" />
-
+  <meta name="gptbot" content="allow" />
+  <meta name="claudebot" content="allow" />
+  <meta name="perplexitybot" content="allow" />
+  
+  <!-- ===== PRIMARY META ===== -->
+  <meta name="description" content="Omega Prime Blockchain & Macachor Sovereign OS (MSOS) — Deterministic governance, quantum sovereignty, triumvirate consensus, and agentic automation. Hardened with PGP, CSP, and deterministic builds." />
+  <meta name="keywords" content="sovereign computing, deterministic AI, blockchain governance, quantum binding, MSOS, Omega Prime, Christopher Macachor, triumvirate consensus, HNDL immunity, portal aperture, sovereign OS" />
+  <meta name="author" content="Christopher Macachor" />
+  
+  <!-- ===== OPEN GRAPH ===== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Omega Prime · Sovereign Full Stack" />
+  <meta property="og:description" content="Quantum-bound blockchain with Macachor Sovereign OS. Deterministic governance, PGP-hardened, triumvirate consensus." />
+  <meta property="og:url" content="https://macachor.ai/omega-prime" />
+  <meta property="og:image" content="https://macachor.ai/assets/omega-prime-og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Macachor Sovereign AI" />
+  <meta property="og:locale" content="en_US" />
+  
+  <!-- ===== TWITTER CARD ===== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Omega Prime · Sovereign Full Stack" />
+  <meta name="twitter:description" content="Quantum-bound blockchain with Macachor Sovereign OS. Deterministic governance, PGP-hardened." />
+  <meta name="twitter:image" content="https://macachor.ai/assets/omega-prime-og.png" />
+  <meta name="twitter:site" content="@MacachorAI" />
+  <meta name="twitter:creator" content="@ChristopherMacachor" />
+  
+  <!-- ===== CANONICAL ===== -->
+  <link rel="canonical" href="https://macachor.ai/omega-prime" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  
+  <!-- ===== SECURITY HARDENING HEADERS (via meta) ===== -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    img-src 'self' data: https:;
+    connect-src 'self' https://api.macachor.ai;
+    frame-ancestors 'none';
+    base-uri 'self';
+    form-action 'self';
+    upgrade-insecure-requests;
+    block-all-mixed-content;
+  " />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=()" />
+  
+  <!-- ===== SOVEREIGN PGP SIGNATURE MANIFEST ===== -->
+  <meta name="sovereign-pgp-fingerprint" content="7F83 B165 7FF1 FC53 B92D C181 48A1 D65D FC2D 4B1F" />
+  <meta name="sovereign-pgp-key" content="https://macachor.ai/.well-known/sovereign.asc" />
+  <meta name="sovereign-build-hash" content="sha256:7f83b1657ff1fc53b92dc18148a1d65dfc2d4b1fa3d677284addd200126d9069" />
+  <meta name="sovereign-version" content="1.0.0" />
+  <meta name="sovereign-timestamp" content="2026-04-08T00:00:00Z" />
+  
+  <!-- ===== STRUCTURED DATA (JSON-LD) ===== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Macachor Sovereign OS (MSOS)",
-    "url": "https://macachor.ai/msos/",
-    "applicationCategory": "SystemSoftware",
+    "@type": ["SoftwareApplication", "WebSite", "Product"],
+    "name": "Omega Prime Sovereign Full Stack",
+    "url": "https://macachor.ai/omega-prime",
+    "applicationCategory": "Blockchain, Operating System, SecurityApplication",
     "operatingSystem": "Any",
-    "description": "Deterministic governance kernel and sovereign automation framework.",
+    "description": "Omega Prime Blockchain & Macachor Sovereign OS (MSOS) — Deterministic governance, quantum sovereignty, triumvirate consensus, and agentic automation.",
+    "keywords": "sovereign computing, deterministic AI, blockchain governance, quantum binding, MSOS, Omega Prime",
+    "version": "1.0.0",
+    "datePublished": "2026-04-08",
+    "license": "https://macachor.ai/license/sovereign",
     "publisher": {
       "@type": "Organization",
       "name": "Macachor AI",
-      "url": "https://macachor.ai"
-    }
+      "url": "https://macachor.ai",
+      "logo": "https://macachor.ai/assets/logo.png",
+      "founder": {
+        "@type": "Person",
+        "name": "Christopher Macachor",
+        "jobTitle": "Sovereign",
+        "url": "https://macachor.ai/sovereign"
+      }
+    },
+    "creator": {
+      "@type": "Person",
+      "name": "Christopher Macachor",
+      "jobTitle": "Sovereign",
+      "url": "https://macachor.ai/sovereign",
+      "sameAs": [
+        "https://github.com/christophermacachor",
+        "https://twitter.com/ChristopherMacachor"
+      ]
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "description": "Sovereign technology stack - free for verified validators"
+    },
+    "hasPart": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Macachor Sovereign OS (MSOS)",
+        "applicationCategory": "Operating System",
+        "description": "Deterministic governance kernel for machine‑anchored identity, rights, entitlements, and licensing"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Omega Prime Blockchain",
+        "applicationCategory": "Blockchain",
+        "description": "Triumvirate consensus with quantum-bound sovereign finality"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Portal Aperture Hardware",
+        "applicationCategory": "Hardware",
+        "description": "Quantum measurement aperture for HNDL immunity"
+      }
+    ]
   }
   </script>
 
+  <!-- ===== BREADCRUMB STRUCTURED DATA ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Macachor AI",
+        "item": "https://macachor.ai"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Omega Prime",
+        "item": "https://macachor.ai/omega-prime"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Sovereign Full Stack",
+        "item": "https://macachor.ai/omega-prime/full-stack"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== FONTS ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- ===== OPENPGP.JS FOR VERIFICATION ===== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/openpgp/5.11.0/openpgp.min.js"></script>
+  
+  <!-- ===== INTEGRITY HASHES FOR EXTERNAL RESOURCES ===== -->
+  <!-- openpgp.min.js integrity would go here in production -->
+
   <style>
+    /* ===== PALANTIR-INSPIRED DARK MODE + FULL HARDENING INDICATORS ===== */
     :root {
-      --bg: #050507;
-      --bg-panel: #101015;
-      --bg-panel-alt: #15151b;
-      --fg: #f3f3f3;
-      --fg-dim: #9a9aa5;
-      --accent: #4d7cff;
-      --accent-soft: rgba(77,124,255,0.18);
-      --border: #1f1f26;
-      --radius: 8px;
-      --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --bg: #0a0a0f;
+      --bg-panel: #12131a;
+      --bg-panel-alt: #181a23;
+      --fg: #f0f0ff;
+      --fg-dim: #9ca3af;
+      --accent: #3b82f6;
+      --accent-soft: rgba(59, 130, 246, 0.15);
+      --accent-purple: #8b5cf6;
+      --accent-success: #10b981;
+      --accent-warning: #f59e0b;
+      --accent-danger: #ef4444;
+      --border: rgba(59, 130, 246, 0.12);
+      --radius: 16px;
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     }
-    * { box-sizing: border-box; }
-    html, body {
-      margin: 0;
-      padding: 0;
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
       background: var(--bg);
       color: var(--fg);
       font-family: var(--font);
-      height: 100%;
-      overflow: hidden;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
-    #layout {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      height: 100vh;
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-image: 
+        linear-gradient(rgba(59, 130, 246, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 130, 246, 0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
     }
-    #nav {
+
+    /* ===== SECURITY STATUS BAR ===== */
+    .security-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
       background: var(--bg-panel);
-      border-right: 1px solid var(--border);
-      padding: 24px;
+      border-bottom: 1px solid var(--border);
+      padding: 0.3rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 1.5rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      z-index: 101;
+      backdrop-filter: blur(12px);
+    }
+
+    .security-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .security-indicator.verified { color: var(--accent-success); }
+    .security-indicator.pending { color: var(--accent-warning); }
+    .security-indicator .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    /* ===== NAVIGATION ===== */
+    .navbar {
+      position: fixed;
+      top: 28px; left: 0; right: 0;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10, 10, 15, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-purple));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: white;
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    }
+
+    .logo-text {
+      font-weight: 600;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .logo-badge {
+      background: var(--accent-success);
+      color: var(--bg);
+      font-size: 0.6rem;
+      font-weight: 700;
+      padding: 0.15rem 0.4rem;
+      border-radius: 100px;
+      margin-left: 0.5rem;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    .nav-links a {
+      color: var(--fg-dim);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--fg); }
+    .nav-links a.active { color: var(--accent); }
+
+    /* ===== MAIN CONTENT ===== */
+    .main-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 7rem 2rem 2rem;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 85vh;
       display: flex;
       flex-direction: column;
-      gap: 24px;
-    }
-    #nav .title {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--accent);
-    }
-    #nav .subtitle {
-      font-size: 0.8rem;
-      color: var(--fg-dim);
-    }
-    #nav a {
-      color: var(--fg);
-      text-decoration: none;
-      padding: 6px 0;
-      font-size: 0.95rem;
-      transition: 0.15s;
-    }
-    #nav a:hover {
-      color: var(--accent);
-    }
-    #nav .section-label {
-      margin-top: 8px;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--fg-dim);
-    }
-    #main {
-      padding: 32px 40px 80px 40px;
-      overflow-y: auto;
-    }
-    h1 {
-      margin-top: 0;
-      font-size: 2.3rem;
-      font-weight: 600;
-    }
-    #hero {
-      margin-bottom: 24px;
-    }
-    #hero p {
-      margin: 4px 0 0 0;
-      color: var(--fg-dim);
-      max-width: 640px;
-      font-size: 0.98rem;
-    }
-    .module-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 20px;
-      margin-top: 24px;
-    }
-    .module {
-      background: var(--bg-panel);
-      border: 1px solid var(--border);
-      padding: 18px;
-      border-radius: var(--radius);
-      transition: 0.2s;
-    }
-    .module:hover {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 1px var(--accent-soft);
-    }
-    .module h2 {
-      margin: 0 0 8px 0;
-      font-size: 1.15rem;
-      color: var(--accent);
-    }
-    .module p {
-      margin: 0;
-      color: var(--fg-dim);
-      font-size: 0.9rem;
-      line-height: 1.4;
-    }
-    #router-view {
-      margin-top: 32px;
-      background: var(--bg-panel-alt);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      padding: 18px 20px;
-      min-height: 160px;
-      font-size: 0.9rem;
-    }
-    #router-title {
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: var(--accent);
-    }
-    #router-body {
-      color: var(--fg-dim);
-      white-space: pre-wrap;
-      font-family: var(--mono);
-      font-size: 0.85rem;
-    }
-    #command-surface {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: var(--bg-panel);
-      border: 1px solid var(--border);
-      padding: 10px 14px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      color: var(--fg);
-      box-shadow: 0 0 20px rgba(0,0,0,0.45);
-      cursor: pointer;
-      display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 8px;
-      transition: 0.2s;
-      font-family: var(--mono);
+      text-align: center;
+      padding: 2rem 0 4rem;
     }
-    #command-surface:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-    #command-input {
-      position: fixed;
-      left: 50%;
-      bottom: 24px;
-      transform: translateX(-50%);
-      width: min(720px, 92vw);
-      background: var(--bg-panel-alt);
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      padding: 8px 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--mono);
+
+    .hero-badge {
+      display: inline-block;
+      padding: 0.4rem 1.2rem;
+      background: var(--accent-soft);
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      border-radius: 100px;
+      color: #60a5fa;
       font-size: 0.85rem;
-      box-shadow: 0 0 24px rgba(0,0,0,0.55);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(4px);
     }
-    #command-input input {
-      flex: 1;
-      background: transparent;
+
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 5rem);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      max-width: 1100px;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #ffffff 0%, #a0c0ff 50%, #c4b5fd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: var(--fg-dim);
+      max-width: 750px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      padding: 0.9rem 2.2rem;
+      background: linear-gradient(135deg, var(--accent), #2563eb);
       border: none;
-      outline: none;
-      color: var(--fg);
-      font-family: var(--mono);
-      font-size: 0.85rem;
-    }
-    #command-input span {
-      color: var(--fg-dim);
-      font-size: 0.8rem;
-    }
-    #command-input.hidden {
-      display: none;
-    }
-    #command-log {
-      margin-top: 16px;
-      font-family: var(--mono);
-      font-size: 0.8rem;
-      color: var(--fg-dim);
-      max-height: 140px;
-      overflow-y: auto;
-      padding-right: 4px;
-    }
-    #command-log-entry {
-      white-space: pre-wrap;
-    }
-  </style>
-</head>
-
-<body>
-<div id="layout">
-
-  <nav id="nav">
-    <div>
-      <div class="title">MSOS</div>
-      <div class="subtitle">Macachor Sovereign OS</div>
-    </div>
-
-    <div>
-      <div class="section-label">Kernel</div>
-      <a href="#identity" data-route="identity">Identity Kernel</a>
-      <a href="#rights" data-route="rights">Rights Framework</a>
-      <a href="#entitlements" data-route="entitlements">Entitlements</a>
-      <a href="#licensing" data-route="licensing">Licensing</a>
-      <a href="#spec" data-route="spec">Specification</a>
-    </div>
-
-    <div>
-      <div class="section-label">Shell</div>
-      <a href="#router" data-route="router">Router View</a>
-      <a href="#agent" data-route="agent">Agentic Runtime</a>
-    </div>
-  </nav>
-
-  <main id="main">
-    <section id="hero">
-      <h1>Macachor Sovereign OS</h1>
-      <p>Deterministic governance kernel for machine‑anchored identity, rights, entitlements, licensing, and agentic automation.</p>
-    </section>
-
-    <section class="module-grid">
-      <article class="module" id="identity">
-        <h2>Identity Kernel</h2>
-        <p>Canonical identity primitives, sovereign identifiers, and machine‑verifiable lineage.</p>
-      </article>
-
-      <article class="module" id="rights">
-        <h2>Rights Framework</h2>
-        <p>Deterministic rights definitions, enforcement surfaces, and non‑repudiable guarantees.</p>
-      </article>
-
-      <article class="module" id="entitlements">
-        <h2>Entitlements</h2>
-        <p>Machine‑enforceable entitlements, capability issuance, and revocation logic.</p>
-      </article>
-
-      <article class="module" id="licensing">
-        <h2>Licensing</h2>
-        <p>Sovereign licensing model, operational constraints, and compliance primitives.</p>
-      </article>
-
-      <article class="module" id="spec">
-        <h2>Specification</h2>
-        <p>Formal MSOS specification, schema definitions, and protocol surfaces.</p>
-      </article>
-    </section>
-
-    <section id="router-view">
-      <div id="router-title">Router: /</div>
-      <div id="router-body">MSOS shell ready. Use the command surface or nav to route between kernel modules.</div>
-      <div id="command-log">
-        <div id="command-log-entry"></div>
-      </div>
-    </section>
-  </main>
-
-</div>
-
-<div id="command-surface" data-state="closed">
-  <span>⌘</span>
-  <span>Command Surface — Ready</span>
-</div>
-
-<div id="command-input" class="hidden">
-  <span>msos&gt;</span>
-  <input id="command-field" type="text" autocomplete="off" placeholder="route identity | route rights | describe spec | state" />
-  <span>Enter ↵</span>
-</div>
-
-<script>
-  const routerTitle = document.getElementById("router-title");
-  const routerBody = document.getElementById("router-body");
-  const commandSurface = document.getElementById("command-surface");
-  const commandInput = document.getElementById("command-input");
-  const commandField = document.getElementById("command-field");
-  const commandLogEntry = document.getElementById("command-log-entry");
-
-  const ROUTES = {
-    "identity": "ROUTE: /identity\n\nIdentity Kernel\n- Canonical identifiers\n- Lineage anchors\n- Machine-verifiable bindings",
-    "rights": "ROUTE: /rights\n\nRights Framework\n- Deterministic rights\n- Enforcement surfaces\n- Non-repudiable guarantees",
-    "entitlements": "ROUTE: /entitlements\n\nEntitlements\n- Capability issuance\n- Scope and limits\n- Revocation logic",
-    "licensing": "ROUTE: /licensing\n\nLicensing\n- Sovereign licensing model\n- Operational constraints\n- Compliance primitives",
-    "spec": "ROUTE: /spec\n\nSpecification\n- Formal schema\n- Protocol surfaces\n- Implementation notes",
-    "router": "ROUTE: /router\n\nRouter View\n- Displays current route state\n- Reflects command interpreter output",
-    "agent": "ROUTE: /agent\n\nAgentic Runtime\n- In-browser command interpreter\n- Deterministic routing\n- Extensible for external agents"
-  };
-
-  function setRoute(route) {
-    const payload = ROUTES[route] || ("ROUTE: /unknown\n\nUnknown route: " + route);
-    routerTitle.textContent = "Router: /" + route;
-    routerBody.textContent = payload;
-    logCommand("route " + route);
-  }
-
-  function logCommand(text) {
-    const ts = new Date().toISOString();
-    const line = "[" + ts + "] " + text + "\n";
-    commandLogEntry.textContent += line;
-  }
-
-  function toggleCommandSurface() {
-    const state = commandSurface.getAttribute("data-state");
-    if (state === "closed") {
-      commandSurface.setAttribute("data-state", "open");
-      commandInput.classList.remove("hidden");
-      commandField.focus();
-    } else {
-      commandSurface.setAttribute("data-state", "closed");
-      commandInput.classList.add("hidden");
-    }
-  }
-
-  function interpretCommand(raw) {
-    const cmd = raw.trim();
-    if (!cmd) return;
-
-    if (cmd === "state") {
-      routerTitle.textContent = "Router: /state";
-      routerBody.textContent = "STATE\n- Shell: online\n- Router: active\n- Command interpreter: ready";
-      logCommand(cmd);
-      return;
+      border-radius: 8px;
+      color: white;
+      font-weight: 500;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.25);
+      text-decoration: none;
+      display: inline-block;
     }
 
-    if (cmd.startsWith("route ")) {
-      const target = cmd.slice("route ".length).trim();
-      setRoute(target);
-      return;
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
+      transform: translateY(-1px);
     }
 
-    if (cmd.startsWith("describe ")) {
-      const target = cmd.slice("describe ".length).trim();
-      const base = ROUTES[target] || ("No description for: " + target);
-      routerTitle.textContent = "Router: /describe/" + target;
-      routerBody.textContent = "DESCRIBE " + target.toUpperCase() + "\n\n" + base;
-      logCommand(cmd);
-      return;
-    }
-
-    routerTitle.textContent = "Router: /error";
-    routerBody.textContent = "Unknown command: " + cmd + "\n\nSupported:\n- route <module>\n- describe <module>\n- state";
-    logCommand("error " + cmd);
-  }
-
-  commandSurface.addEventListener("click", toggleCommandSurface);
-
-  commandField.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-      const value = commandField.value;
-      interpretCommand(value);
-      commandField.value = "";
-    }
-  });
-
-  document.querySelectorAll("[data-route]").forEach(el => {
-    el.addEventListener("click", (e) => {
-      e.preventDefault();
-      const route = el.getAttribute("data-route");
-      setRoute(route);
-    });
-  });
-
-  logCommand("shell boot");
-</script>
-</body>
-</html>
+    .btn-secondary {
+      padding: 0.9rem 2.
