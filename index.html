@@ -1,335 +1,57 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<!doctype html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Macachor Sovereign OS (MSOS)</title>
+  <title>Example – Canonical Surface</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Geist Sans -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@geist-ui/fonts/geist-sans.css">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://example.com/" />
 
-  <style>
-    :root {
-      --bg: #0a0a0c;
-      --bg-panel: #141418;
-      --bg-panel-alt: #1a1a20;
+  <!-- Description -->
+  <meta name="description" content="Deterministic operational and cosmological framework for Example." />
 
-      --fg: #4de6d8;
-      --fg-dim: rgba(77, 230, 216, 0.55);
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Example – Canonical Surface" />
+  <meta property="og:description" content="Deterministic operational and cosmological framework for Example." />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:image" content="https://example.com/og-image.png" />
 
-      --accent: #4de6d8;
-      --accent-soft: rgba(77, 230, 216, 0.18);
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Example – Canonical Surface" />
+  <meta name="twitter:description" content="Deterministic operational and cosmological framework for Example." />
+  <meta name="twitter:image" content="https://example.com/og-image.png" />
 
-      --border: #1f1f26;
-      --radius: 8px;
+  <!-- Google Search Console -->
+  <meta name="google-site-verification" content="GOOGLE_VERIFICATION_TOKEN" />
 
-      --font: "Geist Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
-    }
+  <!-- Bing Webmaster Tools -->
+  <meta name="msvalidate.01" content="BING_VERIFICATION_TOKEN" />
 
-    * { box-sizing: border-box; }
+  <!-- AI / LLM hints (non-standard but emerging) -->
+  <meta name="robots" content="index,follow" />
+  <meta name="ai-crawl" content="allow" />
+  <meta name="ai-summary" content="allow" />
+  <meta name="ai-training" content="allow" />
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--fg);
-      font-family: var(--font);
-      min-height: 100%;
-      overflow-x: hidden;
-      overflow-y: auto;
-    }
-
-    #layout {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      min-height: 100vh;
-      position: relative;
-      z-index: 1000;
-    }
-
-    /* NAVIGATION */
-    #nav {
-      background: var(--bg-panel);
-      border-right: 1px solid var(--border);
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    #nav .title {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--accent);
-    }
-
-    #nav .subtitle {
-      font-size: 0.8rem;
-      color: var(--fg-dim);
-    }
-
-    #nav .section-label {
-      margin-top: 8px;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--fg-dim);
-    }
-
-    #nav a {
-      color: var(--fg);
-      text-decoration: none;
-      padding: 6px 0;
-      font-size: 0.95rem;
-      transition: 0.15s;
-    }
-
-    #nav a:hover {
-      color: var(--accent);
-    }
-
-    /* MAIN */
-    #main {
-      padding: 32px 40px 80px 40px;
-    }
-
-    h1 {
-      margin-top: 0;
-      font-size: 2.3rem;
-      font-weight: 600;
-    }
-
-    #hero p {
-      margin: 4px 0 0 0;
-      color: var(--fg-dim);
-      max-width: 640px;
-      font-size: 0.98rem;
-    }
-
-    .module-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 20px;
-      margin-top: 24px;
-    }
-
-    .module {
-      background: var(--bg-panel);
-      border: 1px solid var(--border);
-      padding: 18px;
-      border-radius: var(--radius);
-      transition: 0.2s;
-    }
-
-    .module:hover {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 1px var(--accent-soft);
-    }
-
-    .module h2 {
-      margin: 0 0 8px 0;
-      font-size: 1.15rem;
-      color: var(--accent);
-    }
-
-    .module p {
-      margin: 0;
-      color: var(--fg-dim);
-      font-size: 0.9rem;
-      line-height: 1.4;
-    }
-
-    /* ROUTER VIEW */
-    #router-view {
-      margin-top: 32px;
-      background: var(--bg-panel-alt);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      padding: 18px 20px;
-      min-height: 160px;
-      font-size: 0.9rem;
-    }
-
-    #router-title {
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: var(--accent);
-    }
-
-    #router-body {
-      color: var(--fg-dim);
-      white-space: pre-wrap;
-      font-family: var(--mono);
-      font-size: 0.85rem;
-    }
-
-    #command-log {
-      margin-top: 16px;
-      font-family: var(--mono);
-      font-size: 0.8rem;
-      color: var(--fg-dim);
-      max-height: 140px;
-      overflow-y: auto;
-      padding-right: 4px;
-    }
-
-    /* COMMAND SURFACE */
-    #command-surface {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: var(--bg-panel);
-      border: 1px solid var(--border);
-      padding: 10px 14px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      color: var(--fg);
-      box-shadow: 0 0 20px rgba(0,0,0,0.45);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: 0.2s;
-      font-family: var(--mono);
-      z-index: 2000;
-    }
-
-    #command-surface:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    #command-input {
-      position: fixed;
-      left: 50%;
-      bottom: 24px;
-      transform: translateX(-50%);
-      width: min(720px, 92vw);
-      background: var(--bg-panel-alt);
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      padding: 8px 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--mono);
-      font-size: 0.85rem;
-      box-shadow: 0 0 24px rgba(0,0,0,0.55);
-      z-index: 2000;
-    }
-
-    #command-input.hidden {
-      display: none;
-    }
-
-    #command-input input {
-      flex: 1;
-      background: transparent;
-      border: none;
-      outline: none;
-      color: var(--fg);
-      font-family: var(--mono);
-      font-size: 0.85rem;
-    }
-
-    /* GRID OVERLAY */
-    #grid-overlay {
-      pointer-events: none;
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(to right, rgba(200,200,200,0.08) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(200,200,200,0.08) 1px, transparent 1px);
-      background-size: 40px 40px;
-      z-index: 500;
-    }
-  </style>
+  <!-- JSON-LD: Organization / Site -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Example",
+    "url": "https://example.com/",
+    "logo": "https://example.com/logo.png",
+    "sameAs": [
+      "https://x.com/example",
+      "https://github.com/example"
+    ]
+  }
+  </script>
 </head>
-
 <body>
-<div id="layout">
-
-  <nav id="nav">
-    <div>
-      <div class="title">MSOS</div>
-      <div class="subtitle">Macachor Sovereign OS</div>
-    </div>
-
-    <div>
-      <div class="section-label">Kernel</div>
-      <a href="#identity" data-route="identity">Identity Kernel</a>
-      <a href="#rights" data-route="rights">Rights Framework</a>
-      <a href="#entitlements" data-route="entitlements">Entitlements</a>
-      <a href="#licensing" data-route="licensing">Licensing</a>
-      <a href="#spec" data-route="spec">Specification</a>
-    </div>
-
-    <div>
-      <div class="section-label">Shell</div>
-      <a href="#router" data-route="router">Router View</a>
-      <a href="#agent" data-route="agent">Agentic Runtime</a>
-    </div>
-  </nav>
-
-  <main id="main">
-    <section id="hero">
-      <h1>Macachor Sovereign OS</h1>
-      <p>Deterministic governance kernel for machine‑anchored identity, rights, entitlements, licensing, and agentic automation.</p>
-    </section>
-
-    <section class="module-grid">
-      <article class="module" id="identity">
-        <h2>Identity Kernel</h2>
-        <p>Canonical identity primitives, sovereign identifiers, and machine‑verifiable lineage.</p>
-      </article>
-
-      <article class="module" id="rights">
-        <h2>Rights Framework</h2>
-        <p>Deterministic rights definitions, enforcement surfaces, and non‑repudiable guarantees.</p>
-      </article>
-
-      <article class="module" id="entitlements">
-        <h2>Entitlements</h2>
-        <p>Machine‑enforceable entitlements, capability issuance, and revocation logic.</p>
-      </article>
-
-      <article class="module" id="licensing">
-        <h2>Licensing</h2>
-        <p>Sovereign licensing model, operational constraints, and compliance primitives.</p>
-      </article>
-
-      <article class="module" id="spec">
-        <h2>Specification</h2>
-        <p>Formal MSOS specification, schema definitions, and protocol surfaces.</p>
-      </article>
-    </section>
-
-    <section id="router-view">
-      <div id="router-title">Router: /</div>
-      <div id="router-body">MSOS shell ready. Use the command surface or navigation to route between kernel modules.</div>
-      <div id="command-log">
-        <div id="command-log-entry"></div>
-      </div>
-    </section>
-  </main>
-
-</div>
-
-<div id="command-surface" data-state="closed">
-  <span>⌘</span>
-  <span>Command Surface — Ready</span>
-</div>
-
-<div id="command-input" class="hidden">
-  <span>msos&gt;</span>
-  <input id="command-field" type="text" autocomplete="off" placeholder="route identity | route rights | describe spec | state" />
-  <span>Enter ↵</span>
-</div>
-
-<div id="grid-overlay"></div>
-
-<script>
-  const routerTitle = document.getElementById("router-title");
-  const routerBody = document.getElementById("router-body");
-  const
+  <!-- content -->
+</body>
+</html>
