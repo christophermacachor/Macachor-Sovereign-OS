@@ -1,6 +1,54 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
+  <!DOCTYPE html>
+  <title>Simple Payment</title>
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+  <button id="checkout-button">Pay $10</button>
+
+  <script>
+    // Replace with your Stripe publishable key
+    const stripe = Stripe('your_publishable_key_here');
+    
+    const checkoutButton = document.getElementById('checkout-button');
+    
+    checkoutButton.addEventListener('click', () => {
+      // Redirect to Stripe Checkout
+      stripe.redirectToCheckout({
+        lineItems: [{
+          price: 'your_price_id_here', // From Stripe Dashboard
+          quantity: 1,
+        }],
+        mode: 'payment',
+        successUrl: window.location.href + '?success=true',
+        cancelUrl: window.location.href + '?canceled=true',
+      })
+      .then((result) => {
+        if (result.error) {
+          console.error(result.error.message);
+        }
+      });
+    });
+  </script>
+
+  <style>
+    #checkout-button {
+      background-color: #635bff;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #checkout-button:hover {
+      background-color: #4b45c2;
+    }
+  </style>
+</body>
+</html>
   <meta charset="utf-8" />
   <title>Macachor Sovereign OS (MSOS)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
